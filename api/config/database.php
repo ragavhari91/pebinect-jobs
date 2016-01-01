@@ -1,9 +1,9 @@
 <!-- 
- Description:
+ Description: Database connection configuration
  Created on: Dec 27, 2015 
- Modified on:
- Modified by:  
- Version: 
+ Modified on: Jan 01, 2016
+ Modified by: Uva
+ Version: 1.0
  Changes made since last version:
 -->
 
@@ -65,8 +65,8 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
+            'database'  => env('DB_DATABASE', 'pebinect'),
+            'username'  => env('DB_USERNAME', 'root'),
             'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',

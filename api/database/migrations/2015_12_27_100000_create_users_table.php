@@ -1,9 +1,9 @@
 <!-- 
- Description:
+ Description: Migration for creating database schema for User related tables
  Created on: Dec 27, 2015 
- Modified on:
- Modified by:  
- Version: 
+ Modified on: Jan 01, 2016
+ Modified by:  Uva
+ Version: 1.0
  Changes made since last version:
 -->
 
@@ -21,13 +21,19 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->rememberToken();
-            $table->timestamps();
+        Schema::create('user', function(Blueprint $table)
+        {
+                $table->increments('id');
+                $table->string('user_first_name');
+                $table->string('user_last_name');
+                $table->integer('user_age')->unsigned();
+                $table->integer('user_gender');
+                $table->string('user_email')->unique();
+                $table->string('user_password');
+                $table->string('user_mobile')->unique();
+                $table->unsignedInteger('user_role');
+                $table->unsignedInteger('user_status');
+                $table->timestamps();
         });
     }
     
@@ -39,6 +45,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('user');
     }
 }
