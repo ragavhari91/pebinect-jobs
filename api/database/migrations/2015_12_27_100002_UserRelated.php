@@ -33,6 +33,19 @@ class UserRelated extends Migration {
                    $table->foreign('user_status')->references('id')->on('status');
                 });
                 
+                Schema::create('profile_picture',function(Blueprint $table)
+                {
+                   $table->increments('id');
+                   $table->string('url');
+                   $table->unsignedInteger('picture_status');
+                   $table->unsignedInteger('user_id');
+                });
+                
+                Schema::table('profile_picture',function(Blueprint $table){
+                    $table->foreign('picture_status')->references('id')->on('status');
+                    $table->foreign('user_id')->references('id')->on('user');
+                });
+                
                 Schema::create('login_session',function(Blueprint $table){
                         $table->increments('id');
                         $table->integer('user_id')->unsigned();

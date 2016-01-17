@@ -1,8 +1,15 @@
-/* 
-* Description:
-* Created on: Dec 27, 2015 
-* Modified on:
-* Modified by:  
-* Version: 
-* Changes made since last version:
-*/
+(function () {
+
+    angular.module('app').factory('userRegistrationService', ['$q', '$http', userRegistrationService]);
+
+    function userRegistrationService($q, $http) {
+        return {
+            userRegistration: userRegistration,
+        }
+        
+        function userRegistration(data)
+        {
+           return $http({method: 'POST',data: data,url: HOST + USER_REGISTRATION}).then(function(response){return response.data;})
+        }
+    }
+}());

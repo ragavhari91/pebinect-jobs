@@ -6,6 +6,6 @@
 * Version: 
 * Changes made since last version:
 */
-
-
+var HOST = "http://localhost:8000";
+var USER_REGISTRATION = "/user/register";
 

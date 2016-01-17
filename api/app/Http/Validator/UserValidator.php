@@ -1,28 +1,19 @@
-<!-- 
- Description:
- Created on: Dec 27, 2015 
- Modified on:
- Modified by:  
- Version: 
- Changes made since last version:
--->
-
-
 <?php
 namespace App\Http\Validator;
 use Validator;
 use Illuminate\Http\Request;
 
-class UserValidator 
+
+class UserValidator
 {
     public function userRegistrationValidator(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'emailId'=>'required',
-            'password'=>'required'
-        ]);
+        $validator = Validator::make($request->all(), array(
+            'user_first_name' => 'required',
+            'user_last_name' => 'required',
+            'user_email'=>'required',
+            'user_password'=>'required'
+        ));
         
         $response = "";
        
@@ -34,6 +25,6 @@ class UserValidator
        {
            $response = true;
        }
-       return $response;
+      return $response;
     }
 }

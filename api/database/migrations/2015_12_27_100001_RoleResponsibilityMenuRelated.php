@@ -21,7 +21,7 @@ class RoleResponsibilityMenuRelated extends Migration {
                 });
                 
                 Schema::table('role',function(Blueprint $table){
-                   $table->foreign('status_code')->references('id')->on('status')->onDelete('cascade');
+                   $table->foreign('status_code')->references('id')->on('status');
                 });
                 
                 Schema::create('role_group',  function(Blueprint $table){
@@ -33,19 +33,21 @@ class RoleResponsibilityMenuRelated extends Migration {
                 });
                 
                 Schema::table('role_group',function(Blueprint $table){
-                   $table->foreign('status_code')->references('id')->on('status')->onDelete('cascade');
+                   $table->foreign('status_code')->references('id')->on('status');
                 });
                 
                 Schema::create('role_mapping',  function(Blueprint $table){
                     $table->increments('id');
                     $table->unsignedInteger('role_id');
                     $table->unsignedInteger('role_group_id');
+                    $table->unsignedInteger('status_code');
                     $table->timestamps();
                 });
                 
                 Schema::table('role_mapping',function(Blueprint $table){
-                   $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
-                   $table->foreign('role_group_id')->references('id')->on('role_group')->onDelete('cascade');
+                   $table->foreign('role_id')->references('id')->on('role');
+                   $table->foreign('role_group_id')->references('id')->on('role_group');
+                   $table->foreign('status_code')->references('id')->on('status');
                 });
                 
                 Schema::create('responsibility',  function(Blueprint $table){

@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/pebinect-jobs/api/config/database.php</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/client/app.js</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.html</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.service.js</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Controllers/UserController.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Validator/UserValidator.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Model/User.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/index.html</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/routes.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/constants/service-url.js</file>
             <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.controller.js</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Service/UserService.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Requests/Request.php</file>
         </group>
     </open-files>
 </project-private>

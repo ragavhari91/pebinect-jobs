@@ -1,15 +1,4 @@
-<!-- 
- Description:
- Created on: Dec 27, 2015 
- Modified on:
- Modified by:  
- Version: 
- Changes made since last version:
--->
-
-<?php
-
-namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

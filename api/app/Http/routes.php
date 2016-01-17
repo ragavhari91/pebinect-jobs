@@ -1,14 +1,11 @@
-<!-- 
- Description:
- Created on: Dec 27, 2015 
- Modified on:
- Modified by:  
- Version: 
- Changes made since last version:
--->
-
-
 <?php
 
+Event::listen('illuminate.query', function($query)
+{
+    //var_dump($query);
+});
+
+
+Route::post('user/register', 'UserController@register');
 Route::resource('user', 'UserController');
 
