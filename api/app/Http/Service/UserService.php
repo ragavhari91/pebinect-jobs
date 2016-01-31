@@ -46,7 +46,8 @@ class UserService
     public function loginuser(User $user)
     {
        $constants   =   new AppConstants();
-       $result = $user->select('user.*')->where('user_email',$user_email)->where('user_password',$user_password)->first();
+       $user    = new User();
+       $result = $user->select('user.*')->where('user_email',$user->user_email)->where('user_password',$user->user_password)->first();
        
             if($result==null)
             {

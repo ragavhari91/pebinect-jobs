@@ -60,6 +60,7 @@ class UserController extends Controller
    public function login(Request $request)
    {
            $user                =   new User();
+           $userService         =   new UserService();
            $uservalidator       =   new UserValidator();
            $response            =   new Response();
            $constants           =   new AppConstants();
