@@ -46,16 +46,15 @@ class UserService
     public function loginuser(User $user)
     {
        $constants   =   new AppConstants();
-       $user    = new User();
-       $result = $user->select('user.*')->where('user_email',$user->user_email)->where('user_password',$user->user_password)->first();
+       $result      =   $user->where('user_email',$user->user_email)->where('user_password',$user->user_password)->first();
        
-            if($result==null)
+            if($result == null)
             {
                 $result = $constants->LOGIN_FAILURE_STATUS();
             }
             else
             {
-                $result = $constants-LOGIN_SUCCESS_STATUS();
+                $result = $constants->LOGIN_SUCCESS_STATUS();
             }
        
        return $result;
