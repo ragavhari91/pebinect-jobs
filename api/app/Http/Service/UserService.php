@@ -42,4 +42,21 @@ class UserService
        }
        return $userExist;
     }
+    
+    public function loginuser(User $user)
+    {
+       $constants   =   new AppConstants();
+       $result = $user->select('user.*')->where('user_email',$user_email)->where('user_password',$user_password)->first();
+       
+            if($result==null)
+            {
+                $result = $constants->LOGIN_FAILURE_STATUS();
+            }
+            else
+            {
+                $result = $constants-LOGIN_SUCCESS_STATUS();
+            }
+       
+       return $result;
+    }
 }

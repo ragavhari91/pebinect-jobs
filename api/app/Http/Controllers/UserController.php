@@ -33,7 +33,7 @@ class UserController extends Controller
                 $user->user_first_name    =   $request->user_first_name;
                 $user->user_last_name     =   $request->user_last_name;
                 $user->user_email         =   $request->user_email;
-                $user->user_password      =   $request->user_password;
+                $user->user_password      =   bcrypt($request->user_password);
                 
                 $result          =   $userService->createuser($user);  
                 
@@ -41,6 +41,7 @@ class UserController extends Controller
                 {
                     $response->setResponseStatus($constants->SUCCESS());
                     $response->setResponseMessage($constants->USER_INSERT_SUCCESS_MESSAGE());
+
                 }
                 else if($result == $constants->USER_ALREADY_EXISTS_STATUS())
                 {
@@ -58,6 +59,36 @@ class UserController extends Controller
    
    public function login(Request $request)
    {
-        
+           $user                =   new User();
+           $uservalidator       =   new UserValidator();
+           $response            =   new Response();
+           $constants           =   new AppConstants();
+           
+           
+           if(!$uservalidator->userLoginValidator($request))
+           {
+                $response->setResponseStatus($constants->FAILURE());
+                $response->setResponseMessage($constants->USER_VALIDATION_ERROR_MESSAGE());
+           }
+           else
+           {             
+                $user->user_email         =   $request->user_email;
+                $user->user_password      =   bcrypt($request->user_password);
+                
+                $result          =   $userService->loginuser($user);  
+                
+                if($result == $constants->LOGIN_SUCCESS_STATUS())
+                {
+                    $response->setResponseStatus($constants->SUCCESS());
+                    $response->setResponseMessage($constants->LOGIN_SUCCESS_MESSAGE());
+
+                }
+                else
+                {
+                    $response->setResponseStatus($constants->FAILURE());
+                    $response->setResponseMessage($constants->LOGIN_FAILURE_MESSAGE());
+                }
+           } 
+        return json_encode(array("status"=>$response->getResponseStatus(),"message"=>$response->getResponseMessage()));   
    }
 }

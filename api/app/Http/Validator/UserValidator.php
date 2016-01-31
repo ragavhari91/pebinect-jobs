@@ -27,4 +27,24 @@ class UserValidator
        }
       return $response;
     }
+    
+    public function userLoginValidator(Request $request)
+    {
+        $validator = Validator::make($request->all(), array(
+            'user_email'=>'required',
+            'user_password'=>'required'
+        ));
+        
+        $response = "";
+       
+       if ($validator->fails()) 
+       {
+           $response = false;
+       }
+       else
+       {
+           $response = true;
+       }
+      return $response;
+    }
 }

@@ -1,8 +1,17 @@
+/* 
+ Description: User registration controller 
+ Created on: Dec 27, 2015 
+ Modified on: Jan 03, 2016
+ Modified by: Ragav
+ Version: 1.0
+ Changes made since last version:
+    Changed the controller from userController to userRegistrationController
+*/
 (function(){
     
-    angular.module('app').controller('userController', ['$scope', '$location', 'userRegistrationService', '$state' , userController]);
+    angular.module('app').controller('userRegistrationController', ['$scope', '$location', 'userRegistrationService', '$state' , userRegistrationController]);
 
-    function userController($scope, $location, userRegistrationService, $state) 
+    function userRegistrationController($scope, $location, userRegistrationService, $state) 
     {
         $scope.status_message = "";
         

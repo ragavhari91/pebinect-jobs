@@ -7,5 +7,6 @@ Event::listen('illuminate.query', function($query)
 
 
 Route::post('user/register', 'UserController@register');
+Route::post('user/login', 'UserController@login');
 Route::resource('user', 'UserController');
 

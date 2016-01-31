@@ -52,6 +52,26 @@ class AppConstants
     {
        return "User Registration Success";
     }
+    
+    function LOGIN_SUCCESS_MESSAGE()
+    {
+       return "Login Success";
+    }
+    
+    function LOGIN_FAILURE_MESSAGE()
+    {
+       return "Login Failure,Please check your credentials";
+    }
+    
+    function LOGIN_SUCCESS_STATUS()
+    {
+       return "LOGIN_SUCCESS"; 
+    }
+    
+    function LOGIN_FAILURE_STATUS()
+    {
+       return "LOGIN_FAILURE"; 
+    }
 }
 
 
