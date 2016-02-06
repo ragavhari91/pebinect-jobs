@@ -33,7 +33,7 @@ class UserController extends Controller
                 $user->user_first_name    =   $request->user_first_name;
                 $user->user_last_name     =   $request->user_last_name;
                 $user->user_email         =   $request->user_email;
-                $user->user_password      =   bcrypt($request->user_password);
+                $user->user_password      =   $request->user_password;
                 
                 $result          =   $userService->createuser($user);  
                 
@@ -74,7 +74,7 @@ class UserController extends Controller
            else
            {             
                 $user->user_email         =   $request->user_email;
-                $user->user_password      =   bcrypt($request->user_password);
+                $user->user_password      =   $request->user_password;
                 
                 $result          =   $userService->loginuser($user);  
                 
