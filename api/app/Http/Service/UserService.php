@@ -2,6 +2,7 @@
 namespace App\Http\Service;
 use App\Http\Model\User;
 use App\Http\Constants\AppConstants;
+use Hash;
 
 class UserService 
 {
@@ -46,17 +47,18 @@ class UserService
     public function loginuser(User $user)
     {
        $constants   =   new AppConstants();
-       $result      =   $user->where('user_email',$user->user_email)->where('user_password',$user->user_password)->first();
        
-            if($result == null)
-            {
-                $result = $constants->LOGIN_FAILURE_STATUS();
-            }
-            else
+       $passwordRow = $user->where('user_email', $user->user_email)->first(); //Getting row for corresponding email
+       $hashedPassword =   $passwordRow->user_password; 
+       
+       if (Hash::check($user->user_password, $hashedPassword))
             {
                 $result = $constants->LOGIN_SUCCESS_STATUS();
             }
-       
+        else
+            {
+                $result = $constants->LOGIN_FAILURE_STATUS();
+            }
        return $result;
     }
 }
