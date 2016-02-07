@@ -3,16 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.service.js</file>
             <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Controllers/UserController.php</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Validator/UserValidator.php</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Model/User.php</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/index.html</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/routes.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/partial/registration-user-partial.html</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/login/user/partial/login-user-partial.html</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.html</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/login/user/login-user.html</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/login/user/login-user.controller.js</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.directive.js</file>
             <file>file:/C:/wamp/www/pebinect-jobs/client/constants/service-url.js</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.controller.js</file>
             <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Service/UserService.php</file>
-            <file>file:/C:/wamp/www/pebinect-jobs/api/app/Http/Requests/Request.php</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/registration/user/registration-user.controller.js</file>
+            <file>file:/C:/wamp/www/pebinect-jobs/client/modules/login/user/login-user.directive.js</file>
         </group>
     </open-files>
 </project-private>

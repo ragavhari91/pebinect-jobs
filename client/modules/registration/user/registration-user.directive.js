@@ -1,8 +1,5 @@
-/* 
-* Description:
-* Created on: Dec 27, 2015 
-* Modified on:
-* Modified by:  
-* Version: 
-* Changes made since last version:
-*/
+ angular.module('app').directive('userRegistration', function() {
+  return {
+    templateUrl: 'client/modules/registration/user/partial/registration-user-partial.html'
+  };
+});
