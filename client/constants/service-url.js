@@ -6,7 +6,7 @@
 * Version: 
 * Changes made since last version:
 */
-var HOST = "http://localhost:9000";
+var HOST = "http://localhost:8000";
 var USER_REGISTRATION = "/user/register";
 var USER_LOGIN = "/user/login";
 

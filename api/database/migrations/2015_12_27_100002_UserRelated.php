@@ -37,8 +37,8 @@ class UserRelated extends Migration {
                 {
                    $table->increments('id');
                    $table->string('url');
-                   $table->unsignedInteger('picture_status');
                    $table->unsignedInteger('user_id');
+                   $table->unsignedInteger('picture_status');
                 });
                 
                 Schema::table('profile_picture',function(Blueprint $table){
@@ -48,14 +48,17 @@ class UserRelated extends Migration {
                 
                 Schema::create('login_session',function(Blueprint $table){
                         $table->increments('id');
-                        $table->integer('user_id')->unsigned();
-                        $table->integer('session_id')->unsigned();
+                        $table->unsignedInteger('user_id')->unsigned();
+                        $table->string('session_id');
                         $table->dateTime('datetime');
+                        $table->string('ip_address');
+                        $table->unsignedInteger('country_id');
                         $table->unsignedInteger('session_status');
                 });
                 
                 Schema::table('login_session',function(Blueprint $table){
                    $table->foreign('user_id')->references('id')->on('user');
+                   $table->foreign('country_id')->references('id')->on('country');
                    $table->foreign('session_status')->references('id')->on('status');
                 });
 	}

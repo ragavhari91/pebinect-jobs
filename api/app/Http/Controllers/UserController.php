@@ -83,7 +83,7 @@ class UserController extends Controller
                 {
                     $response->setResponseStatus($constants->SUCCESS());
                     $response->setResponseMessage($constants->LOGIN_SUCCESS_MESSAGE());
-
+                    $response->setResponseObject($userService->createSession($user));
                 }
                 else
                 {
@@ -91,6 +91,7 @@ class UserController extends Controller
                     $response->setResponseMessage($constants->LOGIN_FAILURE_MESSAGE());
                 }
            } 
-        return json_encode(array("status"=>$response->getResponseStatus(),"message"=>$response->getResponseMessage()));   
-   }
+        return json_encode(array("status"=>$response->getResponseStatus(),"message"=>$response->getResponseMessage(),"data"=>$response->getResponseObject()));   
+           
+    }
 }

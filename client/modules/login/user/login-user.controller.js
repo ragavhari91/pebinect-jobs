@@ -24,6 +24,8 @@
             
             userLoginService.userLogin(data).then(function(response){
                 
+                console.log("RESPOSNSE"+JSON.stringify(response));
+                
                 if(response.status === "Failure")
                 {
                     $scope.status_message = response.message;

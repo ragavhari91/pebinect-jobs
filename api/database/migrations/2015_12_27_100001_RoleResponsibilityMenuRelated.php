@@ -65,8 +65,8 @@ class RoleResponsibilityMenuRelated extends Migration {
                 });
                 
                 Schema::table('role_responsibility',function(Blueprint $table){
-                   $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
-                   $table->foreign('responsibility_id')->references('id')->on('responsibility')->onDelete('cascade');
+                   $table->foreign('role_id')->references('id')->on('role');
+                   $table->foreign('responsibility_id')->references('id')->on('responsibility');
                 });     
                 
                 Schema::create('menu',  function(Blueprint $table){
@@ -85,8 +85,8 @@ class RoleResponsibilityMenuRelated extends Migration {
                 });
                 
                 Schema::table('menu_responsibility',function(Blueprint $table){
-                   $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade');
-                   $table->foreign('responsibility_id')->references('id')->on('responsibility')->onDelete('cascade');
+                   $table->foreign('menu_id')->references('id')->on('menu');
+                   $table->foreign('responsibility_id')->references('id')->on('responsibility');
                 });     
 
 	}

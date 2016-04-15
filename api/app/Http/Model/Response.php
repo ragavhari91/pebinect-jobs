@@ -4,6 +4,7 @@ class Response
 {
     private $response_status;
     private $response_message;
+    private $response_object;
     
     public function getResponseStatus()
     {
@@ -23,6 +24,16 @@ class Response
     public function setResponseMessage($response_message)
     {
         $this->response_message = $response_message;
+    }
+    
+    public function getResponseObject()
+    {
+        return $this->response_object ;
+    }
+    
+    public function setResponseObject($response_object)
+    {
+        $this->response_object = $response_object;
     }
 }
 

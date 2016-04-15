@@ -25,7 +25,7 @@ class Forgotpassword extends Migration {
                 
               Schema::table('forgotpassword',function(Blueprint $table){  
                       $table->foreign('email')->references('user_email')->on('user');
-                  });
+              });
 	}
 
 	/**
