@@ -83,15 +83,24 @@ class UserController extends Controller
                 {
                     $response->setResponseStatus($constants->SUCCESS());
                     $response->setResponseMessage($constants->LOGIN_SUCCESS_MESSAGE());
-                    $response->setResponseObject($userService->createSession($user));
+                    
+                    $userid = $userService->getUserID($user);
+                    
+                    $session = $userService->createSession($userid);
+                    $responsibility = $userService->getResponsibility($userid);
+                    $menu = $userService->getMenu($userid);
                 }
                 else
                 {
                     $response->setResponseStatus($constants->FAILURE());
                     $response->setResponseMessage($constants->LOGIN_FAILURE_MESSAGE());
+                    
+                    $session = "";
+                    $responsibility = "";
+                    $menu = "";
                 }
            } 
-        return json_encode(array("status"=>$response->getResponseStatus(),"message"=>$response->getResponseMessage(),"data"=>$response->getResponseObject()));   
-           
+        return json_encode(array("status"=>$response->getResponseStatus(),"message"=>$response->getResponseMessage(),
+                           "Response"=>array("Session"=>$session,"Responsibility"=>$responsibility,"Menu"=>$menu)));             
     }
 }

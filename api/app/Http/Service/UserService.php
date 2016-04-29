@@ -2,10 +2,12 @@
 namespace App\Http\Service;
 use App\Http\Model\User;
 use App\Http\Model\Session;
+use App\Http\Model\Responsibility;
 use App\Http\Constants\AppConstants;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Request;
 use Hash;
+use DB;
 
 class UserService 
 {
@@ -74,19 +76,19 @@ class UserService
        return $result;
     }
     
-    private function getUserID(User $user)
+    public function getUserID(User $user)
     {
         $result  = $user->where('user_email',$user->user_email)->value('id');
         return $result;
     }
     
     
-    public function createSession(User $user)
+    public function createSession($userid)
     {
         $current_time =  Carbon::now()->timestamp;
         $token = str_random(10).$current_time; 
         $ip = Request::ip();
-        $userid = $this->getUserID($user);
+        
         $session_status = 1000;
         
         
@@ -108,6 +110,24 @@ class UserService
         }
         return $response;
          
+    }
+    
+    public function getResponsibility($userid)
+    {
+        $query = "select resp.* from responsibility resp join role_responsibility rr on rr.responsibility_id = resp.id "
+                . "join user u on u.user_role = rr.role_id where u.id = '$userid'";
+        $responsibility = DB::select(DB::raw($query));
+        return $responsibility;
+    }
+    
+    public function getMenu($userid)
+    {
+        $query = "select m.* from menu m join menu_responsibility mr on mr.menu_id = m.id join "
+                . "responsibility r on r.id = mr.responsibility_id join "
+                . "role_responsibility rr on rr.responsibility_id = r.id join "
+                . "user u on u.user_role = rr.role_id where u.id = '$userid'";
+        $menu = DB::select(DB::raw($query));
+        return $menu;
     }
     
 }
